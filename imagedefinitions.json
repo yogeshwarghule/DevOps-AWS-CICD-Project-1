@@ -1,6 +1,6 @@
 [
     {
-        "name": "cicd-task",
+        "name": "web1",
         "imageUri": "436174799454.dkr.ecr.us-east-1.amazonaws.com/demo-doc-repo:latest"
     }
 ]
