@@ -49,8 +49,8 @@ jobs:
         cd /home/ubuntu/project/DevOps-AWS-CICD-Project-1 &&
         git checkout master &&
         git fetch --all &&
-        git reset --hard origin/dev_linux &&
-        git pull origin dev_linux &&
+        git reset --hard origin/master &&
+        git pull origin master &&
         python manage.py runserver
         
 
