@@ -51,7 +51,6 @@ jobs:
         git fetch --all &&
         git reset --hard origin/dev_linux &&
         git pull origin dev_linux &&
-        source trueflowai/bin/activate
         python manage.py runserver
         
 
