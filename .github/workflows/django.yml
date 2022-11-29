@@ -26,3 +26,29 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
  
+  Deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2 
+    - name: Deploy in EC2
+      env:
+        SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
+        PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
+        HOSTNAME : ${{ secrets.HOSTNAME  }}
+        USER_NAME : ${{ secrets.USER_NAME  }}
+            
+      run: |
+        echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+        ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+        #Now we have got the access of EC2 and we will start the deploy .
+        cd /home/ubuntu/trueflowserver &&
+        git checkout master &&
+        git fetch --all &&
+        git reset --hard origin/dev_linux &&
+        git pull origin dev_linux &&
+        source trueflowai/bin/activate
+        python manage.py runserver
+        
+
