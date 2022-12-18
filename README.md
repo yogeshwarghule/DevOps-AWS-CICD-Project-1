@@ -1,6 +1,12 @@
 # DevOps AWS CI/CD Project
 
+[Hashnode Blog on DevOps AWS CI/CD Project](https://yogeshwarghule.hashnode.dev/python-flask-application-aws-tools-based-complete-devops-cicd-pipeline-step-by-step-tutorial)
+
+
 This project demonstrates a continuous integration and continuous deployment (CI/CD) pipeline using various AWS services. The pipeline includes the following steps:
+
+![Alt text](https://github.com/yogeshwarghule/DevOps-AWS-CICD-Project-1/blob/master/ci-cd.jpeg)
+
 
 1. Code is committed to a Git repository hosted on AWS CodeCommit.
 2. Code changes trigger a build process using AWS CodeBuild.
@@ -20,8 +26,6 @@ This project demonstrates a continuous integration and continuous deployment (CI
 - ALB
 
 ## Prerequisites
-
-![Alt text](image.jpg)
 
 
 Before you begin, make sure you have the following:
